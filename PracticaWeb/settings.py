@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'PracticaWeb.urls'
@@ -137,12 +138,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
 MEDIA_URL = '/media/'
-
-MIDDLEWARE = [
-      .....
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
-]
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
