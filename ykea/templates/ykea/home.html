@@ -1,0 +1,16 @@
+<ul>
+    <p>Benvingut a Ykea</p>
+
+</ul>
+
+
+{% if category %}
+    <ul>
+    {% for c in category %}
+    	<li><a href="{% url 'items' c%}"> {{c}} </a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No categories are available.</p>
+{% endif %}

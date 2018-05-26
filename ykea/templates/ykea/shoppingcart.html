@@ -1,0 +1,23 @@
+<a href="{% url 'index'%}"> Back</a>
+
+{% if items %}
+    <ul>
+    {% for item in items %}
+    	<li> {{item.item.name}}  : {{item.quantity}}</li>
+    {% endfor %}
+
+
+        <p> final price: {{price}}</p>
+
+    <form action="{% url 'process'%}" method="post">
+        {% csrf_token %}
+        <input type="submit" name="delete" value="Delete" />
+        &emsp;
+        <input type="submit" name="checkout" value="Checkout" />
+	</form>
+
+    </ul>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+

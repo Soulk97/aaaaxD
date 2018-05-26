@@ -1,0 +1,15 @@
+<a href="{% url 'items' item.category%}"> Back to {{item.category}}</a>
+
+<ul>
+
+    {% if item.is_new %}
+    <p> {*** NEW ***}</p>
+    {% endif %}
+
+    <li> {{item.name}}</li>
+    <li>{{item.description}}</li>
+    <li>{{item.size}} </li>
+
+    <li> {{item.price}} €</li>
+</ul>
+
